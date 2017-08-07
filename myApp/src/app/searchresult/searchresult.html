@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+    
+        <div class="col-md-12">
+
+            <div class="panel panel-default panel-table">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col col-xs-6">
+                    <a href="#" class="btn btn-info btn-sm">
+                  <span class="glyphicon glyphicon-home"></span> Home
+                   </a>
+                    <h3 class="panel-title" style="text-align:center;float:right">SEARCH RESULTS</h3>
+                  </div>
+                  </div>
+              </div>
+              <div class="panel-body">
+                <table class="table table-inverse" id="jobs">
+                  <thead>
+                    <tr>
+                        
+                        <th class="hidden-xs">ID</th>
+                        <th>JOB TITLE</th>
+                        <th>COMPANY</th>
+                        <th>CITY</th>
+                        <th>STATE</th>
+                        <th>DATE</th>
+                    </tr> 
+                  </thead>
+                  <tbody>
+                            <!-- <tr ng-repeat="data in searchData"> -->
+                            <tr dir-paginate="data in searchresult.searchData.results|itemsPerPage:searchresult.pageSize" total-items="searchresult.searchData.totalResults" current-page="searchresult.currentPage">
+                            <td class="hidden-xs"><a href="{{data.url}}" target="_blank">{{data.jobkey}}</a></td>
+                            <td><a href="{{data.url}}" target="_blank">{{data.jobtitle}}</a></td>
+                            <td>{{data.company}}</td>
+                            <td>{{data.city}}</td>
+                            <td>{{data.state}}</td>
+                            <td>{{data.date}}</td>
+                          </tr>
+                        </tbody>
+                </table>
+              </div>
+              <div ng-controller="SearchresultController">
+              <dir-pagination-controls
+                   max-size="10"
+                   direction-links="true"
+                   boundary-links="true" 
+                   on-page-change="pageChangeHandler(newPageNumber)"
+                   >
+                </dir-pagination-controls>
+                </div>
+             
+            </div>
+
+</div></div></div>

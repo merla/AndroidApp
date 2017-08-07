@@ -1,0 +1,59 @@
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT8te8j9AVeOtlr8KMMn_u4sQIElFRV6k&callback=initMap">
+    </script>
+<div class="container">
+ 
+  <div class="row">
+    <div class="col-sm-4 col-md-4">
+        <div class="thumbnail1">
+        <form> 
+           <div class="form-group divGap">
+                <div class="col-sm-10">
+                <select class="form-control selectpicker" title="Select" id="departmentName"
+                ng-options="jobClasstype.name for jobClasstype in main.jobClasstypes track by jobClasstype.key" ng-model="selectedJobType">
+                  <option value="">JOB CLASS</option>
+                </select>
+              </div>
+              <div class="col-sm-2">
+                 <button type="button" class="btn btn-info" ng-click="jobClass(selectedCity.abbreviation, selectedCategory.key, selectedJobType.key)">GO</button>
+              </div></div>
+
+               <div class="form-group divGap">
+                <div class="col-sm-10">
+                <select class="form-control selectpicker" title="Select" id="departmentName" 
+                ng-options="statecode.name for statecode in main.statecodes track by statecode.abbreviation" ng-model="selectedCity">
+                <option value="">JOB STATE</option>
+                </select>
+              </div>
+              <div class="col-sm-2">
+                 <button type="button" class="btn btn-info" ng-click="jobClass(selectedCity.abbreviation, selectedCategory.key, selectedJobType.key)">GO</button>
+              </div>
+              </div>
+
+              <div class="form-group divGap">
+                <div class="col-sm-10">
+                <select class="form-control selectpicker" title="Select" id="departmentName"
+                ng-options="category.name for category in main.jobCategories track by category.key" ng-model="selectedCategory">
+                  <option value="">JOB CATEGORY</option>
+                </select>
+              </div>
+              <div class="col-sm-2">
+                 <button type="button" class="btn btn-info" ng-click="jobClass(selectedCity.abbreviation, selectedCategory.key, selectedJobType.key)">GO</button>
+              </div>
+              </div>
+              </form>
+        </div>
+        <div class="thumbnail1"></div>
+      </div>
+
+      <div class="col-sm-8 col-md-8">
+        <div class="thumbnail">  
+        <!--<div svg-map></div> -->
+        <!-- <div id="container" style="position: relative; width: 750px; height: 500px;"></div>  --> 
+        <div id="map" style="position: relative; width: 750px; height: 500px;"></div> 
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
